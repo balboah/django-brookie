@@ -44,7 +44,7 @@ def total_monetized(self):
     elif self.currency == 'dollar':
         return '&dollar; %s' % pound(self.total)
     elif self.currency == 'sek':
-        return '&kronor; %s' % sek(self.total)
+        return 'kr %s' % sek(self.total)
 total_monetized.short_description = _("Total amount")
 total_monetized.allow_tags = True
 

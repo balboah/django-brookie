@@ -137,7 +137,7 @@ div#simple table{
             <tr class="{% cycle 'even' 'uneven' %}"{% if forloop.last %} style="border-bottom: 1px solid #000;"{% endif %}>
                 <td style="padding-left: 2px;">{{ item.description }} {% if item.date %}<span class="date">({{ item.date|date:"d-m-Y" }})</span>{% endif %}</td>
                 <td class="time">{% if item.time %}{{ item.time }} min.{% endif %}</td>
-                <td class="amount total">kr {{ item.amount|sek }}</td>
+                <td class="amount total">{{ item.amount|sek }} kr</td>
             </tr>
             {% endfor %}
         </table>
@@ -147,17 +147,17 @@ div#simple table{
             <tr>
                 <td width="60%">&nbsp;</td>
                 <td width="20%">Subtotal</td>
-                <td width="20%" class="amount">kr {{ invoice.subtotal|sek }}</td>
+                <td width="20%" class="amount">{{ invoice.subtotal|sek }} kr</td>
             </tr>
             <tr>
                 <td width="60%">&nbsp;</td>
                 <td width="20%">Total {{ invoice.tax.percentage }}% {{ invoice.tax.abbrevation }}</td>
-                <td width="20%" class="amount" style="border-bottom: 1px solid #333;">kr {{ invoice.total_tax|sek }}</td>
+                <td width="20%" class="amount" style="border-bottom: 1px solid #333;">{{ invoice.total_tax|sek }} kr</td>
             </tr> 
             <tr>
                 <td width="60%">&nbsp;</td>
                 <td width="20%" class="total"><strong>Total</strong></td>
-                <td width="20%" class="amount total">kr {{ invoice.total|sek }}</td>
+                <td width="20%" class="amount total">{{ invoice.total|sek }} kr</td>
             </tr>
         </table>
     </div>

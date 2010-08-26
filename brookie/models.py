@@ -124,7 +124,7 @@ class QuotePart(models.Model):
 
 class Quote(models.Model):
     """ Model representing a quote """
-    client = models.ForeignKey(Client, related_name=_('quote'))
+    client = models.ForeignKey(Client, related_name='quote')
     date = models.DateField(_('date'))
     status = models.SmallIntegerField(_('status'), choices=settings.QUOTE_STATUS_CHOICES)
     content = models.TextField(_('content'))
